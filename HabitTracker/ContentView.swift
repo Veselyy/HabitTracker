@@ -15,6 +15,6 @@ struct ContentView: View {
 
 #Preview {
     NavigationStack{
-        HomeView()
+        ContentView()
     }
 }
