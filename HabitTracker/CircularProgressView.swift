@@ -10,29 +10,7 @@ import SwiftUI
 struct CircularProgressView: View {
     var progress: Int // Procenta
     var lineWidth: CGFloat = 20.0 // Tloušťka kruhu
-
-    // Computed property pro zobrazení textu
-    var textPercentage: String {
-        "\(min(progress, 100))%"
-    }
-    
-    var imagePercentage: Image {
-        Image(systemName: "checkmark")
-    }
-    
-    // Funkce vrací univerzální `View` pomocí `AnyView`
-    func Complete() -> AnyView {
-        if progress == 100 {
-            return AnyView(imagePercentage
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(.green))
-        } else {
-            return AnyView(Text(textPercentage)
-                            .font(.system(size: 40, weight: .bold))
-                            .foregroundColor(.black))
-        }
-    }
+    var font: Font? = .title.bold()
 
     var body: some View {
         ZStack {
@@ -50,13 +28,14 @@ struct CircularProgressView: View {
                 .rotationEffect(.degrees(-90)) // Otočení, aby začínalo nahoře
                 .animation(.easeInOut, value: progress)
 
-            // Zobrazení uprostřed, které se mění podle `progress`
-            Complete() // Vložený výsledek funkce `Complete`
+            Text(progress == 100 ? "✓" : "\(progress)%")
+                .font(font)
+                .foregroundColor(progress == 100 ? .green : .black)
         }
-        .frame(width: 150, height: 150) // Velikost grafu
     }
 }
 
 #Preview {
     CircularProgressView(progress: 100)
 }
+
