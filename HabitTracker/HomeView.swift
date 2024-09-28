@@ -10,9 +10,9 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var cards: [Card] = [
-        Card(iconName: "house", title: "Home", color: .blue, progress: 30),
-        Card(iconName: "chart.bar.fill", title: "History", color: .green, progress: 50),
-        Card(iconName: "gear", title: "Settings", color: .red, progress: 70)
+        Card(iconName: "powersleep", title: "Sleep", color: .blue,goal: "8 hr", progress: 0),
+        Card(iconName: "drop.fill", title: "Drink Water", color: .green, goal: "5 l", progress: 0),
+        Card(iconName: "checklist", title: "Review My Day", color: .red, goal: "1x", progress: 0)
     ]
     
     // Vypočítání celkového progresu ze všech karet
@@ -46,7 +46,7 @@ struct HomeView: View {
             }
             .navigationTitle("Today")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     Button(action: {
                         print("Levý button stisknut")
                     }) {
@@ -54,7 +54,7 @@ struct HomeView: View {
                     }
                     .foregroundColor(.black)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     Button(action: {
                         print("Pravý button stisknut")
                     }) {
@@ -70,4 +70,3 @@ struct HomeView: View {
 #Preview {
     HomeView()
 }
-
