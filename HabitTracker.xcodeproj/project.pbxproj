@@ -15,7 +15,6 @@
 		8C6D5F382CA4AB7900A32E1B /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D5F372CA4AB7900A32E1B /* CustomTabBarView.swift */; };
 		8C6D5F3A2CA5525D00A32E1B /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D5F392CA5525D00A32E1B /* CircularProgressView.swift */; };
 		8C6D5F3C2CA55FD600A32E1B /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D5F3B2CA55FD600A32E1B /* CardsView.swift */; };
-		8CF35E502CA6DDAE00DD9B1B /* CustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF35E4F2CA6DDAE00DD9B1B /* CustomPopupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		8C6D5F372CA4AB7900A32E1B /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		8C6D5F392CA5525D00A32E1B /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		8C6D5F3B2CA55FD600A32E1B /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
-		8CF35E4F2CA6DDAE00DD9B1B /* CustomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +62,6 @@
 			children = (
 				8C6D5F242CA4728600A32E1B /* HabitTrackerApp.swift */,
 				8C6D5F262CA4728600A32E1B /* ContentView.swift */,
-				8CF35E4F2CA6DDAE00DD9B1B /* CustomPopupView.swift */,
 				8C6D5F332CA4732900A32E1B /* HomeView.swift */,
 				8C6D5F3B2CA55FD600A32E1B /* CardsView.swift */,
 				8C6D5F282CA4728700A32E1B /* Assets.xcassets */,
@@ -156,7 +153,6 @@
 			files = (
 				8C6D5F3C2CA55FD600A32E1B /* CardsView.swift in Sources */,
 				8C6D5F342CA4732900A32E1B /* HomeView.swift in Sources */,
-				8CF35E502CA6DDAE00DD9B1B /* CustomPopupView.swift in Sources */,
 				8C6D5F382CA4AB7900A32E1B /* CustomTabBarView.swift in Sources */,
 				8C6D5F272CA4728600A32E1B /* ContentView.swift in Sources */,
 				8C6D5F3A2CA5525D00A32E1B /* CircularProgressView.swift in Sources */,

@@ -25,7 +25,7 @@ struct CardsView: View {
     var body: some View {
         VStack {
             ForEach($cards) { $card in
-                CardView(card: $card, selectedCard: $selectedCard)
+                CardView(card: $card,selectedCard: $selectedCard)
             }
         }
         .sheet(item: $selectedCard) { card in
@@ -46,12 +46,18 @@ struct CardsView: View {
 
 // View for individual card
 struct CardView: View {
-    @Binding var card: Card // Binding for card
-    @Binding var selectedCard: Card? // Binding for selected card to show the modal
+    @Binding var card: Card          // Binding pro kartu
+    @Binding var selectedCard: Card? // Binding pro vybranou kartu, aby se zobrazil modální pohled
+    @State private var progress: Int
+
+    // Vlastní inicializátor pro CardView
+    init(card: Binding<Card>, selectedCard: Binding<Card?>) {
+        self._card = card
+        self._selectedCard = selectedCard
+        self._progress = State(initialValue: card.wrappedValue.progress) // Inicializace progress
+    }
 
     var body: some View {
-        ZStack {
-            VStack {
                 HStack {
                     ZStack {
                         Circle()
@@ -65,6 +71,9 @@ struct CardView: View {
                     Spacer()
                     CircularProgressView(progress: card.progress, lineWidth: 5, font: .system(size: 12, weight: .bold))
                         .frame(width: 40, height: 40)
+                        .onTapGesture {
+                            card.progress += progress <= 90 ? 10 : 0
+                        }
                 }
                 .padding()
                 .background(.gray.opacity(0.1))
@@ -72,12 +81,11 @@ struct CardView: View {
                 .shadow(radius: 5)
                 .padding(.horizontal)
                 .onTapGesture {
-                    selectedCard = card // Set the selected card to show the modal
+                    selectedCard = card // Nastavení vybrané karty pro zobrazení modálního okna
                 }
             }
-        }
-    }
 }
+
 
 // View for Timer Settings
 struct TimerSettingsView: View {
