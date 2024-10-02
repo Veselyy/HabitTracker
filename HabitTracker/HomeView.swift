@@ -15,6 +15,8 @@ struct HomeView: View {
         Card(iconName: "checklist", title: "Review My Day", color: .red, goal: "1x", progress: 0)
     ]
     
+    @State private var showEditPage: Bool = false
+
     // Vypočítání celkového progresu ze všech karet
     var totalProgress: Int {
         cards.map { $0.progress }.reduce(0, +) / cards.count
@@ -48,7 +50,7 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button(action: {
-                        print("Levý button stisknut")
+                        showEditPage.toggle()
                     }) {
                         Text("Edit")
                     }
@@ -63,9 +65,13 @@ struct HomeView: View {
                     }
                 }
             }
+            .sheet(isPresented: $showEditPage) {
+                        HomeEditView()
+                    }
+            }
         }
     }
-}
+
 
 #Preview {
     HomeView()
