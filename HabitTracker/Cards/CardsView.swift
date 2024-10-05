@@ -13,31 +13,31 @@ struct CardsView: View {
     
     var body: some View {
         ForEach($cards) { $card in
-            // Podmíněné použití gesta pro viewMode == .list
-            CardView(card: $card, selectedCard: $selectedCard, viewMode: viewMode)
-                .if(viewMode == .list) { view in
-                    view.gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                // Získání aktuálního indexu karty
-                                guard let sourceIndex = cards.firstIndex(where: { $0.id == card.id }) else { return }
-                                let translation = value.translation
-                                let newOffset = Int(translation.height / 50) // Měníme index podle výšky tazení
+            VStack(spacing: 90) {
+                CardView(card: $card, selectedCard: $selectedCard, viewMode: viewMode)
+                    .if(viewMode == .list) { view in
+                        view.gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    // Získání aktuálního indexu karty
+                                    guard let sourceIndex = cards.firstIndex(where: { $0.id == card.id }) else { return }
+                                    let translation = value.translation
+                                    let newOffset = Int(translation.height / 50) // Měníme index podle výšky tazení
 
-                                // Zajištění, že se index nachází v platných mezích
-                                let destinationIndex = max(0, min(cards.count - 1, sourceIndex + newOffset))
-                                
-                                if destinationIndex != sourceIndex {
-                                    withAnimation {
-                                        cards.move(fromOffsets: IndexSet(integer: sourceIndex), toOffset: destinationIndex)
+                                    // Zajištění, že se index nachází v platných mezích
+                                    let destinationIndex = max(0, min(cards.count - 1, sourceIndex + newOffset))
+                                    
+                                    if destinationIndex != sourceIndex {
+                                        withAnimation {
+                                            cards.move(fromOffsets: IndexSet(integer: sourceIndex), toOffset: destinationIndex)
+                                        }
                                     }
                                 }
-                            }
-                    )
-                }
+                        )
+                    }
+            }
         }
         .onMove(perform: move)
-        .listStyle(PlainListStyle())
         .sheet(item: $selectedCard) { card in
             CardProgressView(card: Binding<Card>(
                 get: { card },
@@ -51,6 +51,7 @@ struct CardsView: View {
             .presentationDetents([.fraction(0.5)]) // Show it half screen
             .presentationDragIndicator(.visible) // Visible drag indicator
         }
+        .padding(.vertical, viewMode == .column ? 5 : 0)
     }
     
     private func move(from indices: IndexSet, to newOffset: Int) {
@@ -64,7 +65,7 @@ struct CardsView: View {
         Card(iconName: "drop.fill", title: "Drink Water", color: .green, goal: "5 l", progress: 70),
         Card(iconName: "checklist", title: "Review My Day", color: .red, goal: "1x", progress: 70),
         Card(iconName: "powersleep", title: "Sleep", color: .blue, goal: "8 hr", progress: 70)
-    ]), viewMode: .list)
+    ]), viewMode: .column)
 }
 
 

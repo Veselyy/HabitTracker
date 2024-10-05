@@ -29,7 +29,7 @@ struct CustomTabBarView: View {
             Spacer() // Mezera od pravého okraje obrazovky
         }
         .padding(.top)
-        .background(Color.gray.opacity(0.3))
+        .background(Color.secondary.opacity(0.3))
     }
 }
 

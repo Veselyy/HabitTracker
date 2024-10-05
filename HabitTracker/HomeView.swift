@@ -56,7 +56,7 @@ struct HomeView: View {
                 ToolbarItem(placement: .primaryAction) {
                     NavigationLink(destination: HomeEditView(cards: $cards)) {
                         Text("Edit")
-                            .foregroundColor(.black)
+                            .foregroundColor(.primary)
                     }
                 }
                 ToolbarItem(placement: .primaryAction) {
@@ -64,7 +64,7 @@ struct HomeView: View {
                         print("Pravý button stisknut")
                     }) {
                         Image(systemName: "plus.circle.fill")
-                            .foregroundColor(.black)
+                            .foregroundColor(.primary)
                     }
                 }
             }

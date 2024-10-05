@@ -14,7 +14,6 @@ struct HomeEditView: View {
                     CardsView(cards: $cards, viewMode: .list)
                         .listRowInsets(EdgeInsets())
                 }
-                
                 HStack {
                     Button(action: {
                         deleteCheckedCards()
@@ -23,9 +22,14 @@ struct HomeEditView: View {
                             
                         Text("Delete")
                     }
-                    .foregroundStyle(!isAnyCardChecked() ? Color.gray : Color.red)
+                    .foregroundStyle(!isAnyCardChecked() ? Color.secondary : Color.red)
                     .disabled(!isAnyCardChecked())
                     
+                    Spacer()
+                    if(isAnyCardChecked()){
+                        Text("\(cards.filter { $0.isChecked }.count) selected")
+                            .bold()
+                    }
                     Spacer()
                     
                     Button(action: {
@@ -34,7 +38,7 @@ struct HomeEditView: View {
                         Image(systemName: "archivebox")
                         Text("Archive")
                     }
-                    .foregroundStyle(!isAnyCardChecked() ? Color.gray : Color.black)
+                    .foregroundStyle(!isAnyCardChecked() ? Color.secondary : Color.blue)
                     .disabled(!isAnyCardChecked())
                 }
                 .padding()
