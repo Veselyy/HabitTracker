@@ -43,13 +43,6 @@ struct HomeView: View {
                 }
                 
                 Spacer()
-                
-                // Vlastní TabBar na spodní části
-                CustomTabBarView(tabs: [
-                    TabBarItem(iconName: "house", title: "Home"),
-                    TabBarItem(iconName: "chart.bar.fill", title: "History"),
-                    TabBarItem(iconName: "gear", title: "Settings")
-                ])
             }
             .navigationTitle("Today")
             .toolbar {
