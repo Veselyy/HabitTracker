@@ -41,8 +41,6 @@ struct HomeView: View {
                     // Seznam karet
                     CardsView(cards: $cards)
                 }
-                
-                Spacer()
             }
             .navigationTitle("Today")
             .toolbar {

@@ -72,12 +72,10 @@
 			children = (
 				8C6D5F242CA4728600A32E1B /* HabitTrackerApp.swift */,
 				8C6D5F262CA4728600A32E1B /* ContentView.swift */,
-				8C6D5F332CA4732900A32E1B /* HomeView.swift */,
-				8C7FCC802CB19B6600B4D0E8 /* HistoryView.swift */,
-				8C7FCC822CB19B7C00B4D0E8 /* SettingsView.swift */,
-				8CFCEF6D2CADBF0700EFADFF /* HomeEditView.swift */,
-				8C6D5F392CA5525D00A32E1B /* CircularProgressView.swift */,
-				8C7FCC7F2CB19B4700B4D0E8 /* Navbar */,
+				8CF6BD612CB4273E00D70348 /* HistoryView */,
+				8CF6BD622CB4274F00D70348 /* SettingsView */,
+				8CF6BD602CB26ED500D70348 /* HomeView */,
+				8C7FCC7F2CB19B4700B4D0E8 /* TabBar */,
 				8CE000F92CADAC600098B09E /* Cards */,
 				8C6D5F282CA4728700A32E1B /* Assets.xcassets */,
 				8C6D5F2A2CA4728700A32E1B /* HabitTracker.entitlements */,
@@ -94,12 +92,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8C7FCC7F2CB19B4700B4D0E8 /* Navbar */ = {
+		8C7FCC7F2CB19B4700B4D0E8 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				8CF6BD5E2CB2691700D70348 /* TabBarView.swift */,
 			);
-			path = Navbar;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		8CE000F92CADAC600098B09E /* Cards */ = {
@@ -110,6 +108,32 @@
 				8CE000F12CADA8410098B09E /* CardProgressView.swift */,
 			);
 			path = Cards;
+			sourceTree = "<group>";
+		};
+		8CF6BD602CB26ED500D70348 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				8C6D5F332CA4732900A32E1B /* HomeView.swift */,
+				8CFCEF6D2CADBF0700EFADFF /* HomeEditView.swift */,
+				8C6D5F392CA5525D00A32E1B /* CircularProgressView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		8CF6BD612CB4273E00D70348 /* HistoryView */ = {
+			isa = PBXGroup;
+			children = (
+				8C7FCC802CB19B6600B4D0E8 /* HistoryView.swift */,
+			);
+			path = HistoryView;
+			sourceTree = "<group>";
+		};
+		8CF6BD622CB4274F00D70348 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				8C7FCC822CB19B7C00B4D0E8 /* SettingsView.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
