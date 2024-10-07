@@ -22,7 +22,7 @@ struct CircularProgressView: View {
             Circle()
                 .trim(from: 0, to: CGFloat(min(progress, 100)) / 100) // Převod na hodnotu 0 - 1
                 .stroke(
-                    progress == 100 ? Color.green : Color.black, // Barva
+                    progress == 100 ? Color.green : Color.primary,
                     style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
                 )
                 .rotationEffect(.degrees(-90)) // Otočení, aby začínalo nahoře
@@ -30,7 +30,7 @@ struct CircularProgressView: View {
 
             Text(progress == 100 ? "✓" : "\(progress)%")
                 .font(font)
-                .foregroundColor(progress == 100 ? .green : .black)
+                .foregroundColor(progress == 100 ? .green : .primary)
         }
     }
 }

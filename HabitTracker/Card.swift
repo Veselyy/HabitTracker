@@ -1,4 +1,12 @@
 //
+//  Card.swift
+//  HabitTracker
+//
+//  Created by Martin Veselý on 02.10.2024.
+//
+
+
+//
 //  CardsView.swift
 //  HabitTracker
 //
